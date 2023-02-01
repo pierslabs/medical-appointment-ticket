@@ -5,10 +5,12 @@ import { Button, Col, Divider, Row } from 'antd';
 import Typography from 'antd/es/typography/Typography';
 import { useNavigate } from 'react-router-dom';
 import { getUserStorage } from '../helper/getUserStorage';
+import { useHideMenu } from '../hooks/useHideMenu';
 
 const { Title, Text } = Typography;
 
 const DesktopPage = () => {
+  useHideMenu(false);
   const navigate = useNavigate();
   const [user] = useState(getUserStorage());
   const { socket } = useContext(SocketContext);
@@ -82,12 +84,15 @@ const DesktopPage = () => {
             </Text>
           )}
         </Col>
-        <Col xs={(22, { align: 'center' })} xl={3}>
+        <Col xs={(22, { align: 'center' })}>
           <Button
             type="primary"
             onClick={nextTicket}
             icon={<ArrowRightOutlined />}
-            style={{ height: '100%', fontSize: 20 }}
+            style={{
+              height: '100%',
+              fontSize: 20,
+            }}
           >
             Next ticket
           </Button>

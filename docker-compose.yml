@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  server-ticket:
+    build: 
+      context: ./server-ticket
+      dockerfile: Dockerfile.dev
+    container_name: ticket_backend
+    ports:
+      - ${PORT}:4000
+    volumes:
+      - ./server-ticket:/app
+      - ./app/node_modules
+
+  client-ticket:
+    build: 
+      context: ./client-ticket
+      dockerfile: Dockerfile
+    container_name: ticket_frontend
+    ports:
+      - '3000:5173'
+    volumes:
+      - ./client-ticket:/app
+      - ./app/node_modules
+
+    stdin_open: true
+    tty: true
+
+

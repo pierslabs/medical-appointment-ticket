@@ -7,8 +7,21 @@ git clone https://github.com/pierslabs/medical-appointment-ticket.git
 or
 
 git clone git@github.com:pierslabs/medical-appointment-ticket.
+
+```
+### Run with docker
+Install dependencies
+
+```bash
+  docker-compose up 
 ```
 
+http
+
+
+
+
+### Run Local without docker
 Install dependencies
 
 ```bash
