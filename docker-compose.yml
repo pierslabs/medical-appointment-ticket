@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile.dev
     container_name: ticket_backend
     ports:
-      - ${PORT}:4000
+      - 4004:4000
     volumes:
       - ./server-ticket:/app
       - ./app/node_modules
@@ -17,7 +17,7 @@ services:
       dockerfile: Dockerfile
     container_name: ticket_frontend
     ports:
-      - '3000:5173'
+      - '3004:5173'
     volumes:
       - ./client-ticket:/app
       - ./app/node_modules
